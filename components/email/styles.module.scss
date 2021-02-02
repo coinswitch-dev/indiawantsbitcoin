@@ -1,0 +1,43 @@
+@import "../../styles/colors.scss";
+.parent {
+    padding-top: 32px;
+    padding-bottom: 32px;
+    background-color: $background;
+}
+.heading {
+    font-weight: 600;
+    font-size: 24px;
+    color: $heading;
+}
+.heading2{
+    font-weight: 400;
+    font-size: 16px;
+    color: $heading;
+}
+.pill{
+    padding: 8px 16px;
+    border-radius: 1000px;
+    border: 1px solid #dadada;
+    margin-right: 8px;
+}
+.swiperCard{
+    border-radius: 4px;
+    background-color: #ffffff;
+    padding: 16px;
+}
+.swiperText{
+    font-weight: 400;
+    font-size: 16px;
+    color: $heading;
+    line-height: 1.54;
+}
+.cta{
+    background-color: #3742FA;
+    font-weight: 400;
+    font-size: 16px;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.0625em;
+    padding: 8px 24px;
+    border-radius: 4px;
+}
