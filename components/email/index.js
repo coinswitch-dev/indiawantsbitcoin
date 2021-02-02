@@ -99,7 +99,7 @@ export default class Email extends Component {
 							<div className={styles.heading2}>
 								TO
 							</div>
-							<div className="flex flex-row my-4">
+							<div className="flex flex-row flex-wrap my-4">
 								{this.state.mps.map((mp, i) => (
 									<div className={styles.pill} key={i}>{mp.name}</div>
 								))}
