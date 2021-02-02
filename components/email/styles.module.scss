@@ -5,15 +5,22 @@
     padding-top: 32px;
     padding-bottom: 32px;
     background-color: $background;
+    background-color: #ffffff;
+    border-radius: 6px;
+    padding: 32px 64px;
     @include breakpoint(sm) {
         padding-left: 16px;
         padding-right: 16px;
+        width: 90vw;
     }
 }
 .heading {
-    font-weight: 600;
+    font-weight: 400;
     font-size: 24px;
     color: $heading;
+    @include breakpoint(sm) {
+        font-size: 20px;
+    }
 }
 .heading2 {
     font-weight: 400;
@@ -33,6 +40,7 @@
     padding: 16px;
     max-height: 500px;
     overflow-y: scroll;
+    border: 1px solid #dadada;
 }
 .swiperText {
     font-weight: 400;
@@ -53,5 +61,8 @@
 .stepheading{
     font-weight: 400;
     font-size: 18px;
-    color: #A0AEC0;
+    color: $body;
+    @include breakpoint(sm) {
+        font-size: 14px;
+    }
 }

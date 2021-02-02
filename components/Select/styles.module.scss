@@ -1,8 +1,15 @@
 @import "../../styles/breakpoints.scss";
+@import "../../styles/colors.scss";
 .inputSelect {
     width: 50%;
     @include breakpoint(sm) {
         width: 100%;
         margin-bottom: 16px;
     }
+}
+.label{
+    font-weight: 400;
+    font-size: 14px;
+    color: $body;
+    margin-bottom: 4px;
 }

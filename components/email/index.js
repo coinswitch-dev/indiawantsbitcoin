@@ -84,50 +84,50 @@ export default class Email extends Component {
 
 	render() {
 		return (
-			<div className={styles.parent}>
-				<Container>
-					<div className={styles.stepheading}>Step 1/2</div>
-					<div className={styles.heading}>
-						Email your MP’s to consider regulating crypto
-					</div>
-					<div className="flex flex-col md:flex-row mt-4">
-						<Select identifier="state" data={this.state.indianStates} handleSelectionChange={this.onStateSelection} containerStyle={{ marginRight: 16 }} />
-						<Select identifier="state" data={this.state.cities} handleSelectionChange={this.onCitySelection} />
-					</div>
-					{Array.isArray(this.state.mps) && this.state.mps.length > 0 && <div className="my-8">
-						<div>
-							<div className={styles.heading2}>
-								TO
-							</div>
-							<div className="flex flex-row flex-wrap my-4">
-								{this.state.mps.map((mp, i) => (
-									<div className={styles.pill} key={i}>{mp.name}</div>
-								))}
-							</div>
+			<div className={`${styles.parent} container mx-auto shadow-md`}>
+				<div className={styles.stepheading}>Step 1/2</div>
+				<div className={styles.heading}>
+					Email your MP’s to consider regulating crypto
+				</div>
+				<div className="flex flex-col md:flex-row mt-4">
+					<Select label="Select State" identifier="state" data={this.state.indianStates} handleSelectionChange={this.onStateSelection} containerStyle={{ marginRight: 16 }} />
+					<Select label="Select District" identifier="state" data={this.state.cities} handleSelectionChange={this.onCitySelection} />
+				</div>
+				{Array.isArray(this.state.mps) && this.state.mps.length > 0 && <div className="my-8">
+					<div>
+						<div className={styles.heading2}>
+							TO
 						</div>
-						<Subject
-							data={this.subjectList}
-							instance={this.subjectSwiper}
-							subjectIndex={this.state.subjectIndex}
-							totalSubjectSlides={this.state.totalSubjectSlides}
-							onSubjectSlideChange={this.onSubjectSlideChange}
-							onSubjectSwiperInit={this.onSubjectSwiperInit} />
-						<Message
-							data={this.messageList}
-							instance={this.messageSwiper}
-							messageIndex={this.state.messageIndex}
-							totalMessageSlides={this.state.totalMessageSlides}
-							onMessageSlideChange={this.onMessageSlideChange}
-							onMessageSwiperInit={this.onMessageSwiperInit} />
-						{this.state.emails.length > 0 &&
-							<div className="mx-8 flex flex-row justify-center mt-8">
-								<a href={`mailto:${this.state.emails}?&subject=${encodeURI(this.state.subject)}&body=${encodeURI(this.state.body)}`}>
-									<button className={styles.cta}>SEND AN EMAIL</button>
-								</a>
-							</div>
-						}
-					</div>}
-				</Container>
+						<div className="flex flex-row flex-wrap my-4">
+							{this.state.mps.map((mp, i) => (
+								<div className={styles.pill} key={i}>{mp.name}</div>
+							))}
+						</div>
+					</div>
+					<div className="mt-8"></div>
+					<Subject
+						data={this.subjectList}
+						instance={this.subjectSwiper}
+						subjectIndex={this.state.subjectIndex}
+						totalSubjectSlides={this.state.totalSubjectSlides}
+						onSubjectSlideChange={this.onSubjectSlideChange}
+						onSubjectSwiperInit={this.onSubjectSwiperInit} />
+					<div className="mt-8"></div>
+					<Message
+						data={this.messageList}
+						instance={this.messageSwiper}
+						messageIndex={this.state.messageIndex}
+						totalMessageSlides={this.state.totalMessageSlides}
+						onMessageSlideChange={this.onMessageSlideChange}
+						onMessageSwiperInit={this.onMessageSwiperInit} />
+					{this.state.emails.length > 0 &&
+						<div className="mx-8 flex flex-row justify-center mt-8">
+							<a href={`mailto:${this.state.emails}?&subject=${encodeURI(this.state.subject)}&body=${encodeURI(this.state.body)}`}>
+								<button className={styles.cta}>SEND AN EMAIL</button>
+							</a>
+						</div>
+					}
+				</div>}
 			</div>
 		)
 	}

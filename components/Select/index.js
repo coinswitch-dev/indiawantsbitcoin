@@ -36,6 +36,7 @@ export default class Select extends React.Component {
         const { selectedOption } = this.state;
         return (
             <div className={[styles.inputSelect]} style={this.props.containerStyle || {}}>
+                <div className={styles.label}>{this.props.label}</div>
                 <ReactSelect
                     value={selectedOption}
                     onChange={this.handleChange}
