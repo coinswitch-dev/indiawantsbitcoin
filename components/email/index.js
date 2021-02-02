@@ -4,7 +4,6 @@ import styles from './styles.module.scss';
 import Select from '../Select';
 import Subject from './subject';
 import Message from './message';
-import cityData from '../../pages/api/indian-cities.json';
 import stateData from '../../pages/api/states.json';
 import mpData from '../../pages/api/mp-data.json';
 import messageTemplates from './messages.json';
@@ -35,9 +34,9 @@ export default class Email extends Component {
 	onStateSelection = (state) => {
 		const selectedState = state.value;
 		let cities = [];
-		for (const city of cityData) {
+		for (const city of mpData) {
 			if (city.state.toLowerCase().includes(selectedState.toLowerCase())) {
-				cities.push(city.name);
+				cities.push(city.district);
 			}
 		}
 		this.setState({ cities });
@@ -87,6 +86,7 @@ export default class Email extends Component {
 		return (
 			<div className={styles.parent}>
 				<Container>
+					<div className={styles.stepheading}>Step 1/2</div>
 					<div className={styles.heading}>
 						Email your MP’s to consider regulating crypto
 					</div>
@@ -99,7 +99,7 @@ export default class Email extends Component {
 							<div className={styles.heading2}>
 								TO
 							</div>
-							<div className="flex flex-row my-4">
+							<div className="flex flex-row flex-wrap my-4">
 								{this.state.mps.map((mp, i) => (
 									<div className={styles.pill} key={i}>{mp.name}</div>
 								))}

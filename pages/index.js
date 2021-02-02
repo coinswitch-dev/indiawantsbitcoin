@@ -2,6 +2,7 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.scss'
 import Container from '../components/container'
 import Email from '../components/email'
+import Content from '../components/content'
 import baton from '../public/baton.png'
 import Count from '../components/Count'
 import Link from 'next/link'
@@ -30,7 +31,8 @@ export default function Home() {
           </Container>
         </div>
         <Email />
-        <Count />
+        <Content />
+        {/* <Count /> */}
       </main>
       <div className={styles.footerSection}>
         <Link href="/terms">

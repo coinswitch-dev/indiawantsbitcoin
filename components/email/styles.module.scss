@@ -1,40 +1,47 @@
 @import "../../styles/colors.scss";
+@import "../../styles/breakpoints.scss";
+
 .parent {
     padding-top: 32px;
     padding-bottom: 32px;
     background-color: $background;
+    @include breakpoint(sm) {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
 }
 .heading {
     font-weight: 600;
     font-size: 24px;
     color: $heading;
 }
-.heading2{
+.heading2 {
     font-weight: 400;
     font-size: 16px;
     color: $heading;
 }
-.pill{
+.pill {
     padding: 8px 16px;
     border-radius: 1000px;
     border: 1px solid #dadada;
     margin-right: 8px;
+    margin-bottom: 8px;
 }
-.swiperCard{
+.swiperCard {
     border-radius: 4px;
     background-color: #ffffff;
     padding: 16px;
     max-height: 500px;
     overflow-y: scroll;
 }
-.swiperText{
+.swiperText {
     font-weight: 400;
     font-size: 16px;
     color: $heading;
     line-height: 1.54;
 }
-.cta{
-    background-color: #3742FA;
+.cta {
+    background-color: #3742fa;
     font-weight: 400;
     font-size: 16px;
     color: #ffffff;
@@ -42,4 +49,9 @@
     letter-spacing: 0.0625em;
     padding: 8px 24px;
     border-radius: 4px;
+}
+.stepheading{
+    font-weight: 400;
+    font-size: 18px;
+    color: #A0AEC0;
 }

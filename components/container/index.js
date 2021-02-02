@@ -1,6 +1,7 @@
+import styles from './styles.module.scss';
 export default function Container({ children }) {
     return (
-        <div className="container mx-auto">
+        <div className={`${styles.container} mx-auto`}>
             {children}
         </div>
     )

@@ -1,1 +1,8 @@
 @import "../../styles/breakpoints.scss";
+
+.container {
+    width: 768px;
+    @include breakpoint(sm) {
+        width: 100%;
+    }
+}
