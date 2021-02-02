@@ -2,8 +2,8 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.scss'
 import Container from '../components/container'
 import Email from '../components/email'
+import baton from '../public/baton.png'
 import Count from '../components/Count'
-
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -17,7 +17,7 @@ export default function Home() {
       <main className={styles.main}>
         <div className={styles.header}>
           <Container>
-            <img src="./baton.png" alt="baton" className={styles.baton} />
+            <img src={baton} alt="baton" className={styles.baton} />
             <h1 className={styles.heading}>
               WE SUPPORT CRYPTOCURRENCIES
             </h1>

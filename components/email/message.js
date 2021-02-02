@@ -34,10 +34,9 @@ export default function Message(props) {
                     <SwiperSlide className={styles.swiperCard} key={e}>
                         <div className={styles.swiperText}>
                             Dear Sir,
-                        <br />
-                            <br />
-                            {e}
                         </div>
+                        <br />
+                        {e.split('\n').map((str, index) => <div className={styles.swiperText} key={index}>{str}</div>)}
                     </SwiperSlide>
                 ))}
             </Swiper>
