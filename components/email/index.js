@@ -44,7 +44,10 @@ export default class Email extends Component {
 	onCitySelection = (selectedCity) => {
 		const mps = mpData.filter(e => e.district.includes(selectedCity.value));
 		console.log(mps.length);
-		this.setState({ mps }, this.renderEmails);
+		this.setState({ mps }, () => {
+			this.renderEmails();
+			this.createEmailContent();
+		});
 	}
 
 	onSubjectSlideChange = () => {
@@ -69,7 +72,14 @@ export default class Email extends Component {
 		const index = this.messageSwiper.activeIndex
 		this.setState({
 			messageIndex: index,
-			body: `Dear Sir, \n ${this.messageList[index]}`
+		}, this.createEmailContent);
+	}
+
+	createEmailContent = () => {
+		const mp = this.state.mps.length === 1 ? this.state.mps[0] : null
+		const salutation = mp ? mp.name.split(',').reverse().join(' ') : 'Sir/Madam'
+		this.setState({
+			body: `Dear ${salutation}, \n ${this.messageList[this.state.messageIndex]}`
 		});
 	}
 
@@ -115,6 +125,7 @@ export default class Email extends Component {
 					<div className="mt-8"></div>
 					<Message
 						data={this.messageList}
+						districtMp={this.state.mps.length === 1 ? this.state.mps[0] : null}
 						instance={this.messageSwiper}
 						messageIndex={this.state.messageIndex}
 						totalMessageSlides={this.state.totalMessageSlides}

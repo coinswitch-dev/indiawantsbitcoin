@@ -33,7 +33,7 @@ export default function Message(props) {
                 {Array.isArray(props.data) && props.data.map(e => (
                     <SwiperSlide className={styles.swiperCard} key={e}>
                         <div className={styles.swiperText}>
-                            Dear Sir,
+                            Dear {props.districtMp ? props.districtMp.name.split(',').reverse().join(' ')  : 'Sir/Madam'},
                         </div>
                         <br />
                         {e.split('\n').map((str, index) => <div className={styles.swiperText} key={index}>{str}</div>)}

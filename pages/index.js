@@ -10,7 +10,7 @@ import Link from 'next/link'
 
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} full-height`}>
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
@@ -18,7 +18,7 @@ export default function Home() {
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
         <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
       </Head>
-      <main className={styles.main}>
+      <main className={`${styles.main} full-height`}>
         <div
           className={styles.hero}
           style={{
