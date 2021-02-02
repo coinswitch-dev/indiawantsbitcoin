@@ -15,7 +15,7 @@ export default function Home() {
       <main className={styles.main}>
         <div className={styles.header}>
           <Container>
-            <img src="./baton.png" alt="baton" className={styles.baton} />
+            <img src="/baton.png" alt="baton" className={styles.baton} />
             <h1 className={styles.heading}>
               WE SUPPORT CRYPTOCURRENCIES
             </h1>
