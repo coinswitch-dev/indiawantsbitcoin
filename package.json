@@ -12,7 +12,6 @@
     "next": "10.0.6",
     "next-images": "^1.7.0",
     "react": "17.0.1",
-    "react-contenteditable": "^3.3.5",
     "react-dom": "17.0.1",
     "react-select": "^4.0.2",
     "sass": "1.32.5",
