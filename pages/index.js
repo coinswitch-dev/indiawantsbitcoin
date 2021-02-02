@@ -4,6 +4,8 @@ import Container from '../components/container'
 import Email from '../components/email'
 import baton from '../public/baton.png'
 import Count from '../components/Count'
+import Link from 'next/link'
+
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -30,6 +32,18 @@ export default function Home() {
         <Email />
         <Count />
       </main>
+      <div className={styles.footerSection}>
+        <Link href="/terms">
+          <a className={styles.termsLabel}>
+          Terms & Conditions
+          </a>
+        </Link>
+        <Link href="/terms">
+          <a className={styles.privacyLabel}>
+            Privacy Policy
+          </a>
+        </Link>
+      </div>
     </div>
   )
 }
