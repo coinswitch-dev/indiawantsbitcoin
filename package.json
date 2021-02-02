@@ -9,6 +9,7 @@
     "serve": "serve out"
   },
   "dependencies": {
+    "firebase": "^8.2.5",
     "next": "10.0.6",
     "next-images": "^1.7.0",
     "react": "17.0.1",

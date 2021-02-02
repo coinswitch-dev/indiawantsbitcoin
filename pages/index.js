@@ -4,6 +4,7 @@ import Container from '../components/container'
 import Email from '../components/email'
 import Content from '../components/content'
 import baton from '../public/baton.png'
+import Count from '../components/Count'
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -29,6 +30,7 @@ export default function Home() {
         </div>
         <Email />
         <Content />
+        {/* <Count /> */}
       </main>
     </div>
   )
