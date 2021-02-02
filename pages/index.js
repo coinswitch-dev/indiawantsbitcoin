@@ -2,6 +2,7 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.scss'
 import Container from '../components/container'
 import Email from '../components/email'
+import Content from '../components/content'
 import baton from '../public/baton.png'
 export default function Home() {
   return (
@@ -27,6 +28,7 @@ export default function Home() {
           </Container>
         </div>
         <Email />
+        <Content />
       </main>
     </div>
   )
