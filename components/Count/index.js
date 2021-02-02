@@ -10,8 +10,27 @@ export default class Select extends React.Component {
         count: 0,
     };
      componentDidMount() {
-      this.increaseCount();
-      this.getCount();
+      this.getRealTimeCount();
+    }
+
+    getRealTimeCount = () => {
+      const query = fire.firestore().collection('shards');
+      const observer = query.onSnapshot(querySnapshot => {
+        let dataList = [];
+        let count = 0;
+        querySnapshot.forEach((item, i) => {
+          let temp = item.data();
+          if(typeof(temp?.count) === 'number' && temp?.count > 0) {
+            count += temp?.count;
+          }
+        });
+        console.log('#####count####', count);
+        if(typeof(count) === 'number' && count > 0) {
+          this.setState({count});
+        }
+      }, err => {
+        console.log(`Encountered error: ${err}`);
+      });
     }
 
     getCount = async () => {
@@ -37,7 +56,10 @@ export default class Select extends React.Component {
     render() {
         return (
             <div>
-              Count {this.state.count}
+              Count {parseInt(this.state.count) > 0 ? this.state.count : ''}
+              <button onClick={this.increaseCount} className={styles.cta}>
+                Send Mail
+              </button>
             </div>
         );
     }
