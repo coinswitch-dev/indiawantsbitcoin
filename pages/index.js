@@ -39,7 +39,7 @@ export default function Home() {
         <div className={styles.emailContainer}>
           <Email />
         </div>
-        {/* <Content /> */}
+        <Content />
         {/* <Count /> */}
       </main>
       <footer className={styles.footerSection}>
