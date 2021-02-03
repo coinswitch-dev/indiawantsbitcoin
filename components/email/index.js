@@ -140,11 +140,14 @@ export default class Email extends Component {
 						onMessageSlideChange={this.onMessageSlideChange}
 						onMessageSwiperInit={this.onMessageSwiperInit} />
 					{this.state.emails.length > 0 &&
-						<div className="mx-8 flex flex-row justify-center mt-8">
-							<a href={`mailto:${this.state.emails}?&subject=${encodeURI(this.state.subject)}&body=${encodeURI(this.state.body)}`} onClick={this.handleEmailSend}>
-								<button className={styles.cta}>SEND AN EMAIL</button>
-							</a>
-						</div>
+						<>
+							<div className="mx-8 flex flex-row justify-center mt-8">
+								<a href={`mailto:${this.state.emails}?&subject=${encodeURI(this.state.subject)}&body=${encodeURI(this.state.body)}`} onClick={this.handleEmailSend}>
+									<button className={styles.cta}>SEND AN EMAIL</button>
+								</a>
+							</div>
+							<div className="text-gray-600 text-sm text-center mt-2">By sending this email I accept the terms and Conditions</div>
+						</>
 					}
 				</div>}
 			</div>

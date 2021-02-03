@@ -15,7 +15,6 @@ import lscache from 'lscache';
 
 export default function Home() {
   const hasSentEmailCache = lscache.get('hasSentEmail');
-  console.log('hasSentEmailCache', hasSentEmailCache);
   const [hasSentEmail, setEmailSent] = useState(Boolean(hasSentEmailCache));
   return (
     <div className={`${styles.container} full-height`}>
@@ -57,7 +56,7 @@ export default function Home() {
             <img src={baton} alt="baton" className={styles.baton} />
             <div className={styles.hero__heading}>
               Express Your Support For #IndiaWantsBitcoin
-             			</div>
+            </div>
             <div className={`${styles.hero__subheading} mt-4`}>
               <strong><i>'If you change nothing, nothing will change':</i></strong> Time to do your bit by supporting this email petition campaign to benefit the crypto community in India.
             			</div>

@@ -135,6 +135,7 @@ export default class Share extends Component {
                         </div>
                     </div>
                 </div>
+                <div className="text-gray-600 text-sm text-center mt-2">By sharing this post I accept the terms and Conditions</div>
             </div>
         )
     }
