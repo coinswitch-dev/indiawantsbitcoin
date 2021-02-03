@@ -8,6 +8,7 @@ import stateData from '../../pages/api/states.json';
 import mpData from '../../pages/api/mp-data.json';
 import messageTemplates from './messages.json';
 import SwiperCore, { Navigation, Controller } from 'swiper';
+import { reportWebVitals } from '../../pages/_app';
 import lscache from 'lscache';
 import Recaptcha from 'react-recaptcha';
 import { shuffleArray } from '../../pages/api/_utils';
@@ -92,6 +93,11 @@ export default class Email extends Component {
 	}
 
 	handleEmailSend = () => {
+		reportWebVitals({
+			eventCategory: 'Petition Website',
+			eventAction: 'email clicked',
+			eventLabel: 'Send Email'
+		});
 		if (typeof this.props.onSuccess === 'function') {
 			lscache.set('hasSentEmail', true);
 			this.props.onSuccess(true);

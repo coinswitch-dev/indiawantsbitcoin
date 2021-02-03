@@ -14,6 +14,8 @@ import {
     WhatsappIcon
 } from "react-share";
 import { shuffleArray as shuffleTemplates } from '../../pages/api/_utils';
+import { reportWebVitals } from '../../pages/_app';
+
 const templates = [
     `I just emailed my constituency’s Member of Parliament (MP) on my views towards the impending Bill’s ban on cryptocurrencies in India. #IndiaWantsBitcoin \nYou too can email your MP telling them how the bill’s passing could leave India behind from here: `,
     `TODAY, I decided to help stop crypto from getting banned in India, so just emailed my constituency’s Member of Parliament (MP) expressing my view and ideas on the proposed Crypto ban Bill. #IndiaWantsBitcoin \nYou can also do so in #3 steps from here: `,
@@ -35,6 +37,14 @@ export default class Share extends Component {
         this.setState({
             slideIndex: index,
             title: this.state.data[index]
+        });
+    }
+
+    onShareClick = (platform) => {
+        reportWebVitals({
+            eventCategory: 'Petition Website',
+            eventAction: 'share clicked',
+            eventLabel: platform
         });
     }
 
@@ -102,11 +112,13 @@ export default class Share extends Component {
                                 url={this.state.shareUrl}
                                 quote={`${this.state.title} ${this.state.shareUrl}`}
                                 className="mr-4"
+                                beforeOnClick={() => this.onShareClick('Facebook')}
                             >
                                 <FacebookIcon size={32} round />
                             </FacebookShareButton>
 
                             <TwitterShareButton
+                                beforeOnClick={() => this.onShareClick('Twitter')}
                                 url={this.state.shareUrl}
                                 title={this.state.title}
                                 className="mr-4">
@@ -114,6 +126,7 @@ export default class Share extends Component {
                             </TwitterShareButton>
 
                             <WhatsappShareButton
+                                beforeOnClick={() => this.onShareClick('Whatsapp')}
                                 url={this.state.shareUrl}
                                 title={this.state.title}
                                 className="mr-4">
@@ -121,6 +134,7 @@ export default class Share extends Component {
                             </WhatsappShareButton>
 
                             <TelegramShareButton
+                                beforeOnClick={() => this.onShareClick('Telegram')}
                                 url={this.state.shareUrl}
                                 title={`${this.state.title} ${this.state.shareUrl}`}
                                 className="mr-4">
@@ -128,6 +142,7 @@ export default class Share extends Component {
                             </TelegramShareButton>
 
                             <RedditShareButton
+                                beforeOnClick={() => this.onShareClick('Reddit')}
                                 url={this.state.shareUrl}
                                 title={`${this.state.title} ${this.state.shareUrl}`}
                             >

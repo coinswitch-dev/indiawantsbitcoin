@@ -15,4 +15,15 @@ function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />
 }
 
+export function reportWebVitals({ eventCategory, eventAction, eventLabel }) {
+  if (eventAction) {
+    window.gtag('send', {
+      hitType: 'event',
+      eventCategory,
+      eventAction,
+      eventLabel
+    });
+  }
+}
+
 export default MyApp
