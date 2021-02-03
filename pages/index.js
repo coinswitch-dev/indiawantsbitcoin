@@ -1,16 +1,19 @@
+import Link from 'next/link'
+import { useState } from 'react';
 import Head from 'next/head'
 import styles from '../styles/Home.module.scss'
 import Container from '../components/container'
 import Email from '../components/email'
+import Success from '../components/success'
 import Share from '../components/share'
 import Content from '../components/content'
 import baton from '../public/baton-light.png'
 import indiawantsbitcoin from '../public/indiawantsbitcoin-banner.png'
 import headerBanner from '../public/header-banner.png'
 import Count from '../components/Count'
-import Link from 'next/link'
 
 export default function Home() {
+  const [hasSentEmail, setEmailSent] = useState(false);
   return (
     <div className={`${styles.container} full-height`}>
       <Head>
@@ -58,7 +61,7 @@ export default function Home() {
           </div>
         </div>
         <div className={styles.emailContainer}>
-          <Email />
+          {hasSentEmail ? <Success /> : <Email onSuccess={setEmailSent} />}
           <Share />
         </div>
         <div className="my-8">

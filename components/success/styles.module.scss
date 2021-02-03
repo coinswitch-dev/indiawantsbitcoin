@@ -1,0 +1,29 @@
+@import "../../styles/colors.scss";
+@import "../../styles/breakpoints.scss";
+
+.parent {
+    padding-top: 32px;
+    padding-bottom: 32px;
+    background-color: $background;
+    background-color: #ffffff;
+    border-radius: 6px;
+    padding: 32px 64px;
+    @include breakpoint(sm) {
+        padding-left: 16px;
+        padding-right: 16px;
+        width: 90vw;
+    }
+}
+
+.successImage{
+    width: 148px;
+    height: auto;
+}
+
+.successText{
+    font-weight: 400;
+    font-size: 18px;
+    color: $body;
+    line-height: 1.54;
+    margin-top: 16px;
+}

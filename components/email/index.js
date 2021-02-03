@@ -12,7 +12,7 @@ SwiperCore.use([Navigation, Controller]);
 
 export default class Email extends Component {
 	messageList = messageTemplates
-	subjectList = ["Appeal for positive regulation of the cryptocurrency market in India.","Calling out for positive regulation of Cryptocurrencies for Atmanirbhar Bharat","Requesting your support for positive regulation of Cryptocurrencies in India","An appeal to positively re-evaluate the recent cryptocurrency prohibition bill in India.","Petition email seeking your support for positive regulation of cryptocurrency market in India."]
+	subjectList = ["Appeal for positive regulation of the cryptocurrency market in India.", "Calling out for positive regulation of Cryptocurrencies for Atmanirbhar Bharat", "Requesting your support for positive regulation of Cryptocurrencies in India", "An appeal to positively re-evaluate the recent cryptocurrency prohibition bill in India.", "Petition email seeking your support for positive regulation of cryptocurrency market in India."]
 
 	state = {
 		indianStates: stateData,
@@ -75,6 +75,12 @@ export default class Email extends Component {
 		}, this.createEmailContent);
 	}
 
+	handleEmailSend = () => {
+		if (typeof this.props.onSuccess === 'function') {
+			this.props.onSuccess(true);
+		}
+	}
+
 	createEmailContent = () => {
 		const mp = this.state.mps.length === 1 ? this.state.mps[0] : null
 		const salutation = mp ? mp.name.split(',').reverse().join(' ') : 'Sir/Madam'
@@ -133,7 +139,7 @@ export default class Email extends Component {
 						onMessageSwiperInit={this.onMessageSwiperInit} />
 					{this.state.emails.length > 0 &&
 						<div className="mx-8 flex flex-row justify-center mt-8">
-							<a href={`mailto:${this.state.emails}?&subject=${encodeURI(this.state.subject)}&body=${encodeURI(this.state.body)}`}>
+							<a href={`mailto:${this.state.emails}?&subject=${encodeURI(this.state.subject)}&body=${encodeURI(this.state.body)}`} onClick={this.handleEmailSend}>
 								<button className={styles.cta}>SEND AN EMAIL</button>
 							</a>
 						</div>
