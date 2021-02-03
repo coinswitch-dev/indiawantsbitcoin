@@ -11,9 +11,12 @@ import baton from '../public/baton-light.png'
 import indiawantsbitcoin from '../public/indiawantsbitcoin-banner.png'
 import headerBanner from '../public/header-banner.png'
 import Count from '../components/Count'
+import lscache from 'lscache';
 
 export default function Home() {
-  const [hasSentEmail, setEmailSent] = useState(false);
+  const hasSentEmailCache = lscache.get('hasSentEmail');
+  console.log('hasSentEmailCache', hasSentEmailCache);
+  const [hasSentEmail, setEmailSent] = useState(Boolean(hasSentEmailCache));
   return (
     <div className={`${styles.container} full-height`}>
       <Head>

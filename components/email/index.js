@@ -8,6 +8,7 @@ import stateData from '../../pages/api/states.json';
 import mpData from '../../pages/api/mp-data.json';
 import messageTemplates from './messages.json';
 import SwiperCore, { Navigation, Controller } from 'swiper';
+import lscache from 'lscache';
 SwiperCore.use([Navigation, Controller]);
 
 export default class Email extends Component {
@@ -77,6 +78,7 @@ export default class Email extends Component {
 
 	handleEmailSend = () => {
 		if (typeof this.props.onSuccess === 'function') {
+			lscache.set('hasSentEmail', true);
 			this.props.onSuccess(true);
 		}
 	}
