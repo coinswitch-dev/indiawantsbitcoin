@@ -10,6 +10,7 @@ import Content from '../components/content'
 import baton from '../public/baton-light.png'
 import indiawantsbitcoin from '../public/indiawantsbitcoin-banner.png'
 import headerBanner from '../public/header-banner.png'
+import favicon from '../public/favicon.ico'
 import Count from '../components/Count'
 import lscache from 'lscache';
 
@@ -38,7 +39,7 @@ export default function Home() {
         <meta property="twitter:description" content="Time to do your bit by supporting the email petition campaign to benefit the crypto community in India" />
         <meta property="twitter:image" content={indiawantsbitcoin} />
 
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href={favicon} />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
         <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
