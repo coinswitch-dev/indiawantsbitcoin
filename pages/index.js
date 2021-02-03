@@ -5,6 +5,7 @@ import Email from '../components/email'
 import Share from '../components/share'
 import Content from '../components/content'
 import baton from '../public/baton-light.png'
+import indiawantsbitcoin from '../public/indiawantsbitcoin-banner.png'
 import headerBanner from '../public/header-banner.png'
 import Count from '../components/Count'
 import Link from 'next/link'
@@ -13,7 +14,25 @@ export default function Home() {
   return (
     <div className={`${styles.container} full-height`}>
       <Head>
-        <title>Create Next App</title>
+        {/* Primary Meta Tags */}
+        <title>Support for Crypto Regulations in India</title>
+        <meta name="title" content="Support for Crypto Regulations in India" />
+        <meta name="description" content="Time to do your bit by supporting the email petition campaign to benefit the crypto community in India" />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://metatags.io/" />
+        <meta property="og:title" content="Support for Crypto Regulations in India" />
+        <meta property="og:description" content="Time to do your bit by supporting the email petition campaign to benefit the crypto community in India" />
+        <meta property="og:image" content={indiawantsbitcoin} />
+
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://metatags.io/" />
+        <meta property="twitter:title" content="Support for Crypto Regulations in India" />
+        <meta property="twitter:description" content="Time to do your bit by supporting the email petition campaign to benefit the crypto community in India" />
+        <meta property="twitter:image" content={indiawantsbitcoin} />
+
         <link rel="icon" href="/favicon.ico" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
