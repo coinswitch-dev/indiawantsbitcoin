@@ -36,7 +36,7 @@ export default function Message(props) {
                             Dear {props.districtMp ? props.districtMp.name.split(',').reverse().join(' ')  : 'Sir/Madam'},
                         </div>
                         <br />
-                        {e.split('\n').map((str, index) => <div className={styles.swiperText} key={index}>{str}</div>)}
+                        {e.split('\n').map((str, index) => <div className={`${styles.swiperText} mb-4`} key={index}>{str}</div>)}
                     </SwiperSlide>
                 ))}
             </Swiper>
