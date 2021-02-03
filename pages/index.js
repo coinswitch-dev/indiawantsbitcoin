@@ -29,10 +29,10 @@ export default function Home() {
           <div className={`container mx-auto ${styles.hero__inner}`}>
             <img src={baton} alt="baton" className={styles.baton} />
             <div className={styles.hero__heading}>
-              WE SUPPORT CRYPTOCURRENCIES
+              Express Your Support For #IndiaWantsBitcoin
              			</div>
             <div className={`${styles.hero__subheading} mt-4`}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tortor cras sit netus urna, malesuada vulputate dolor. Enim ipsum aliquam vel tempor sed leo neque aliquam sagittis.
+              <strong><i>'If you change nothing, nothing will change':</i></strong> Time to do your bit by supporting this email petition campaign to benefit the crypto community in India.
             			</div>
           </div>
         </div>
