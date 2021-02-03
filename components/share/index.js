@@ -13,20 +13,21 @@ import {
     WhatsappShareButton,
     WhatsappIcon
 } from "react-share";
-
+import { shuffleArray as shuffleTemplates } from '../../pages/api/_utils';
 const templates = [
     `I just emailed my constituency’s Member of Parliament (MP) on my views towards the impending Bill’s ban on cryptocurrencies in India. #IndiaWantsBitcoin \nYou too can email your MP telling them how the bill’s passing could leave India behind from here: `,
     `TODAY, I decided to help stop crypto from getting banned in India, so just emailed my constituency’s Member of Parliament (MP) expressing my view and ideas on the proposed Crypto ban Bill. #IndiaWantsBitcoin \nYou can also do so in #3 steps from here: `,
     `I urge you to do your part by emailing the parliament member (MP) of your constituency on GOI’s proposed Crypto Ban. Who will express our concerns and idea about positive crypto regulations, if not us? #IndiaWantsBitcoin \nI did it from here with ease: `
 ];
+const randomTemplates = shuffleTemplates(templates);
 export default class Share extends Component {
     state = {
         slideIndex: 0,
-        totalSlides: templates.length,
+        totalSlides: randomTemplates.length,
         instance: null,
-        data: templates,
+        data: randomTemplates,
         shareUrl: 'https://indiawantsbitcoin.org/',
-        title: templates[0]
+        title: randomTemplates[0]
     }
 
     onSlideChange = () => {
