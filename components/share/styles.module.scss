@@ -75,9 +75,25 @@
     text-transform: uppercase;
 }
 
+.hide-sm {
+    display: none;
+}
+.disp-sm {
+    display: flex;
+}
+
 .shareContainer {
     border: 1px solid #3742fa;
     border-radius: 6px;
     padding: 12px 24px;
     display: inline-block;
+    @include breakpoint(sm) {
+        width: 100%;
+    }
+    &__inner {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
 }

@@ -51,7 +51,7 @@ export default class Share extends Component {
                     <div className={styles.heading}>
                         Encourage Your Friends To Do The Same
                     </div>
-                    <div className="flex flex-row">
+                    <div className="hidden sm:flex flex-row">
                         <div className={`${styles.heading2} mr-4`}>
                             Choose a message template {this.state.slideIndex + 1}/{this.state.totalSlides}
                         </div>
@@ -80,10 +80,21 @@ export default class Share extends Component {
                         </SwiperSlide>
                     ))}
                 </Swiper>
+                <div className="sm:hidden flex flex-row justify-center" style={{ marginTop: '-8px' }}>
+                    <svg className={`h-6 w-6 ${this.state.slideIndex === 0 ? 'text-gray-300' : 'text-indigo-500'} share-prev`} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                    </svg>
+                    <svg className={`h-6 w-6 ${this.state.slideIndex === this.state.totalSlides - 1 ? 'text-gray-300' : 'text-indigo-500'} share-next`} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                </div>
                 <div className="mt-8 flex flex-row justify-center">
                     <div className={styles.shareContainer}>
-                        <div className="flex flex-row align-center justify-center">
-                            <div className={styles.shareText}>
+                        <div className={`${styles.shareText} sm:hidden block text-center mb-4`} style={{ marginRight: 0 }}>
+                            Share On
+                        </div>
+                        <div className={styles.shareContainer__inner}>
+                            <div className={`${styles.shareText} hidden sm:block`}>
                                 Share On
                             </div>
                             <FacebookShareButton

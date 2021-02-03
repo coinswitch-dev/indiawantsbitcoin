@@ -7,7 +7,7 @@ export default function Subject(props) {
                 <div className={styles.heading2}>
                     Subject
                 </div>
-                <div className="flex flex-row">
+                <div className="hidden sm:flex flex-row">
                     <div className={`${styles.heading2} mr-4`}>
                         Choose a subject template {props.subjectIndex + 1}/{props.totalSubjectSlides}
                     </div>
@@ -38,6 +38,14 @@ export default function Subject(props) {
                     </SwiperSlide>
                 ))}
             </Swiper>
+            <div className="sm:hidden flex flex-row justify-center" style={{ marginTop: '-8px' }}>
+                <svg className={`h-6 w-6 ${props.subjectIndex === 0 ? 'text-gray-300' : 'text-indigo-500'} subject-prev`} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+                <svg className={`h-6 w-6 ${props.subjectIndex === props.totalSubjectSlides - 1 ? 'text-gray-300' : 'text-indigo-500'} subject-next`} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+            </div>
         </div>
     )
 }

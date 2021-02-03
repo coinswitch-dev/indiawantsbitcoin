@@ -2,7 +2,7 @@ import styles from './styles.module.scss';
 
 export default function Content() {
     return (
-        <div className="container mx-auto">
+        <div className="container mx-auto p-4">
             <div className={styles.content}>
               <strong>#IndiaWantsBitcoin Campaign Introduction & Why Participate?</strong>
               <br /><br />
