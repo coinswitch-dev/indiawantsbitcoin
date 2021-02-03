@@ -8,9 +8,6 @@ export default class Terms extends React.Component {
     render() {
         return (
             <div className={styles.privacyPage}>
-              <Link href="/" className={styles.homeButton}>
-                home
-              </Link>
               <div className={styles.privacyContainer}>
                 <div className={styles.heading}>GENERAL TERMS AND CONDITIONS</div>
                   <div className={styles.content}>

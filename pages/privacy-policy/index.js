@@ -8,9 +8,6 @@ export default class Privacy extends React.Component {
     render() {
         return (
             <div className={styles.privacyPage}>
-              <Link href="/" className={styles.homeButton}>
-                home
-              </Link>
               <div className={styles.privacyContainer}>
                 <div className={styles.heading}>Privacy Policy</div>
                   <div className={styles.content}>
