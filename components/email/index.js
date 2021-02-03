@@ -168,7 +168,7 @@ export default class Email extends Component {
 							<div className="mx-8 flex flex-row justify-center mt-8">
 								{this.state.isCaptchaSuccessful ?
 									<a href={`mailto:${this.state.emails}?&subject=${encodeURI(this.state.subject)}&body=${encodeURI(this.state.body)}`} onClick={this.handleEmailSend}>
-										<button className={styles.cta} disabled={this.state.isCaptchaSuccessful}>SEND AN EMAIL</button>
+										<button className={styles.cta}>SEND AN EMAIL</button>
 									</a>
 									:
 									<button className={`${styles.cta} ${styles['cta--disabled']}`}>SEND AN EMAIL</button>
