@@ -1,0 +1,83 @@
+@import "../../styles/colors.scss";
+@import "../../styles/breakpoints.scss";
+
+.parent {
+    padding-top: 32px;
+    padding-bottom: 32px;
+    background-color: $background;
+    background-color: #ffffff;
+    border-radius: 6px;
+    padding: 32px 64px;
+    @include breakpoint(sm) {
+        padding-left: 16px;
+        padding-right: 16px;
+        width: 90vw;
+    }
+}
+.heading {
+    font-weight: 400;
+    font-size: 24px;
+    color: $heading;
+    @include breakpoint(sm) {
+        font-size: 20px;
+    }
+}
+.heading2 {
+    font-weight: 400;
+    font-size: 16px;
+    color: $heading;
+}
+.pill {
+    padding: 8px 16px;
+    border-radius: 1000px;
+    border: 1px solid #dadada;
+    margin-right: 8px;
+    margin-bottom: 8px;
+}
+.swiperCard {
+    border-radius: 4px;
+    background-color: #ffffff;
+    padding: 16px;
+    max-height: 500px;
+    overflow-y: scroll;
+    border: 1px solid #dadada;
+}
+.swiperText {
+    font-weight: 400;
+    font-size: 16px;
+    color: $heading;
+    line-height: 1.54;
+}
+.cta {
+    background-color: #3742fa;
+    font-weight: 400;
+    font-size: 16px;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.0625em;
+    padding: 8px 24px;
+    border-radius: 4px;
+}
+.stepheading {
+    font-weight: 400;
+    font-size: 18px;
+    color: $body;
+    @include breakpoint(sm) {
+        font-size: 14px;
+    }
+}
+
+.shareText {
+    font-weight: 400;
+    font-size: 20px;
+    color: #3742fa;
+    margin-right: 32px;
+    text-transform: uppercase;
+}
+
+.shareContainer {
+    border: 1px solid #3742fa;
+    border-radius: 6px;
+    padding: 12px 24px;
+    display: inline-block;
+}
