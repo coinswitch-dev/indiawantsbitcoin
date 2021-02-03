@@ -1670,6 +1670,11 @@ firebase@^8.2.5:
     "@firebase/storage" "0.4.2"
     "@firebase/util" "0.3.4"
 
+froala-editor@^3.2.6:
+  version "3.2.6"
+  resolved "https://registry.yarnpkg.com/froala-editor/-/froala-editor-3.2.6.tgz#dbbe7dd2aa63a9ca1d17ecf8d88d331a9ff9b89b"
+  integrity sha512-y2nojLDb5fPQ25IHxnFRbPrzCF6MjujcnFU3vC7hBNkxQ6JPIgNaYbYm9LNQPuld0MIqG4Usk2EXt1MBwBLu8w==
+
 fs-constants@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/fs-constants/-/fs-constants-1.0.0.tgz#6be0de9be998ce16af8afc24497b9ee9b7ccd9ad"

@@ -48,7 +48,7 @@ export default function Home() {
             Terms & Conditions
           </a>
         </Link>
-        <Link href="/terms">
+        <Link href="/privacy-policy">
           <a className={styles.privacyLabel}>
             Privacy Policy
           </a>
