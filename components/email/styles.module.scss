@@ -61,6 +61,11 @@
     padding: 8px 24px;
     border-radius: 4px;
 }
+.cta--disabled {
+    cursor: no-drop;
+    background-color: #dadada;
+    color: $body;
+}
 .stepheading {
     font-weight: 400;
     font-size: 18px;

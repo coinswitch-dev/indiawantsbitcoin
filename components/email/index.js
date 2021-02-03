@@ -9,6 +9,8 @@ import mpData from '../../pages/api/mp-data.json';
 import messageTemplates from './messages.json';
 import SwiperCore, { Navigation, Controller } from 'swiper';
 import lscache from 'lscache';
+import Recaptcha from 'react-recaptcha';
+
 SwiperCore.use([Navigation, Controller]);
 
 export default class Email extends Component {
@@ -29,7 +31,20 @@ export default class Email extends Component {
 		messageSwiper: null,
 		emails: '',
 		subject: this.subjectList[0],
-		body: `Dear Sir, \n ${this.messageList[0]}`
+		body: `Dear Sir, \n ${this.messageList[0]}`,
+		isCaptchaSuccessful: false
+	}
+
+	onCaptchaInit = () => {
+		/** On Captcha Init */
+	}
+
+	verifyCallback = (response) => {
+		this.setState({ isCaptchaSuccessful: true })
+	}
+
+	expiredCallback = (response) => {
+		this.setState({ isCaptchaSuccessful: false })
 	}
 
 	onStateSelection = (state) => {
@@ -141,10 +156,23 @@ export default class Email extends Component {
 						onMessageSwiperInit={this.onMessageSwiperInit} />
 					{this.state.emails.length > 0 &&
 						<>
+							<div className="flex flex-row justify-center" style={{ marginBottom: '-16px', marginTop: '16px' }}>
+								<Recaptcha
+									sitekey="6Lc8QEgaAAAAACZOvvc4STv0Jqs1fWPR2RRX4rDU"
+									render="explicit"
+									onloadCallback={this.onCaptchaInit}
+									verifyCallback={this.verifyCallback}
+									expiredCallback={this.expiredCallback}
+								/>
+							</div>
 							<div className="mx-8 flex flex-row justify-center mt-8">
-								<a href={`mailto:${this.state.emails}?&subject=${encodeURI(this.state.subject)}&body=${encodeURI(this.state.body)}`} onClick={this.handleEmailSend}>
-									<button className={styles.cta}>SEND AN EMAIL</button>
-								</a>
+								{this.state.isCaptchaSuccessful ?
+									<a href={`mailto:${this.state.emails}?&subject=${encodeURI(this.state.subject)}&body=${encodeURI(this.state.body)}`} onClick={this.handleEmailSend}>
+										<button className={styles.cta} disabled={this.state.isCaptchaSuccessful}>SEND AN EMAIL</button>
+									</a>
+									:
+									<button className={`${styles.cta} ${styles['cta--disabled']}`}>SEND AN EMAIL</button>
+								}
 							</div>
 							<div className="text-gray-600 text-sm text-center mt-2">By sending this email I accept the terms and Conditions</div>
 						</>
