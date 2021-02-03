@@ -33,7 +33,7 @@ export default class Privacy extends React.Component {
                           We will use the information provided by You only in accordance with the purposes described in the Policy.
                         </p>
                         <p className={styles.listDesc}>
-                          We collect Your Personal Information or Non-Personal Information (as hereinafter defined) when use the Website and at the time of Your registration with the Website. Further, We collect information from You during the performance of Services for You. We collect information with respect to Your name, email, address, IP Address and zip code, Your location, device ID, Device location. We collect all of the foregoing information in order to provide You the services.
+                          We collect Your Personal Information or Non-Personal Information (as hereinafter defined) when use the Website and at the time of Your registration with the Website. Further, We collect information from You during the performance of Services for You. We collect information with respect to Your location and Device location. We collect all of the foregoing information in order to provide You the services.
                         </p>
                         <p className={styles.listDesc}>
                           Except as provided herein, We do not solicit any Sensitive Information about You. However, if You share such information with Us voluntarily, We will not be liable for any actions, claims, costs, expenses or other liabilities that may arise as a consequence of any unauthorized use or misuse of such information.
@@ -50,7 +50,7 @@ export default class Privacy extends React.Component {
                             <ol type="i"  className={styles.listDesc}>
                               <li>
                                 <p className={styles.listDesc}>
-                                  Information that You provide to Us by filling in forms on the Website. This may include contact information such as name, email address, mailing address, phone number; 
+                                  Information that You provide to Us by filling in forms on the Website.
                                 </p>
                               </li>
                               <li>
