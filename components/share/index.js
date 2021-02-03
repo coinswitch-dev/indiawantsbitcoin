@@ -14,23 +14,26 @@ import {
     WhatsappIcon
 } from "react-share";
 
-const templates = ['Lorem ipsum dolor sit amet, consectetur adipiscing elit. Placerat cursus sed quis viverra sit sed blandit sit pharetra. Bibendum sapien tellus lectus sed ligula et viverra.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Placerat cursus sed quis viverra sit sed blandit sit pharetra. Bibendum sapien tellus lectus sed ligula et viverra.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Placerat cursus sed quis viverra sit sed blandit sit pharetra. Bibendum sapien tellus lectus sed ligula et viverra.'];
+const templates = [
+    `I just emailed my constituency’s Member of Parliament (MP) on my views towards the impending Bill’s ban on cryptocurrencies in India. #IndiaWantsBitcoin \nYou too can email your MP telling them how the bill’s passing could leave India behind from here: `,
+    `TODAY, I decided to help stop crypto from getting banned in India, so just emailed my constituency’s Member of Parliament (MP) expressing my view and ideas on the proposed Crypto ban Bill. #IndiaWantsBitcoin \nYou can also do so in #3 steps from here: `,
+    `I urge you to do your part by emailing the parliament member (MP) of your constituency on GOI’s proposed Crypto Ban. Who will express our concerns and idea about positive crypto regulations, if not us? #IndiaWantsBitcoin \nI did it from here with ease: `
+];
 export default class Share extends Component {
     state = {
         slideIndex: 0,
         totalSlides: templates.length,
         instance: null,
         data: templates,
-        activeTemplate: '',
         shareUrl: 'https://indiawantsbitcoin.org/',
-        title: 'India Wants Bitcoin'
+        title: templates[0]
     }
 
     onSlideChange = () => {
         const index = this.state.instance.activeIndex;
         this.setState({
             slideIndex: index,
-            activeTemplate: this.state.data[index]
+            title: this.state.data[index]
         });
     }
 
@@ -46,7 +49,7 @@ export default class Share extends Component {
                 <div className={styles.stepheading}>Step 2/2</div>
                 <div className="flex flex-row justify-between">
                     <div className={styles.heading}>
-                        Share with your friends
+                        Encourage Your Friends To Do The Same
                     </div>
                     <div className="flex flex-row">
                         <div className={`${styles.heading2} mr-4`}>
@@ -85,7 +88,7 @@ export default class Share extends Component {
                             </div>
                             <FacebookShareButton
                                 url={this.state.shareUrl}
-                                quote={this.state.title}
+                                quote={`${this.state.title} ${this.state.shareUrl}`}
                                 className="mr-4"
                             >
                                 <FacebookIcon size={32} round />
@@ -101,21 +104,20 @@ export default class Share extends Component {
                             <WhatsappShareButton
                                 url={this.state.shareUrl}
                                 title={this.state.title}
-                                separator=":: "
                                 className="mr-4">
                                 <WhatsappIcon size={32} round />
                             </WhatsappShareButton>
 
                             <TelegramShareButton
                                 url={this.state.shareUrl}
-                                title={this.state.title}
+                                title={`${this.state.title} ${this.state.shareUrl}`}
                                 className="mr-4">
                                 <TelegramIcon size={32} round />
                             </TelegramShareButton>
 
                             <RedditShareButton
                                 url={this.state.shareUrl}
-                                title={this.state.title}
+                                title={`${this.state.title} ${this.state.shareUrl}`}
                             >
                                 <RedditIcon size={32} round />
                             </RedditShareButton>
