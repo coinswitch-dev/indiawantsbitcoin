@@ -2,6 +2,7 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.scss'
 import Container from '../components/container'
 import Email from '../components/email'
+import Share from '../components/share'
 import Content from '../components/content'
 import baton from '../public/baton-light.png'
 import headerBanner from '../public/header-banner.png'
@@ -38,8 +39,11 @@ export default function Home() {
         </div>
         <div className={styles.emailContainer}>
           <Email />
+          <Share />
         </div>
-        <Content />
+        <div className="my-8">
+          <Content />
+        </div>
         {/* <Count /> */}
       </main>
       <footer className={styles.footerSection}>
