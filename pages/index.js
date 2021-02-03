@@ -18,6 +18,7 @@ export default function Home() {
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
         <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-V04Q1FJHPM"></script>
       </Head>
       <main className={`${styles.main} full-height`}>
         <div
