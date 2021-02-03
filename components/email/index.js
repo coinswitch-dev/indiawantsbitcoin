@@ -12,7 +12,7 @@ SwiperCore.use([Navigation, Controller]);
 
 export default class Email extends Component {
 	messageList = messageTemplates
-	subjectList = ["Appeal for positive regulation of the cryptocurrency market in India.", "Petition email seeking your support for positive regulation of cryptocurrency market in India.", "Reaching out for your support to call for positive regulation of Cryptocurrencies for an Atmanirbhar Bharat", "Requesting your support for positive regulation of Cryptocurrencies in India", "An appeal to positively re-evaluate the recent cryptocurrency prohibition bill in India."]
+	subjectList = ["Appeal for positive regulation of the cryptocurrency market in India.","Calling out for positive regulation of Cryptocurrencies for Atmanirbhar Bharat","Requesting your support for positive regulation of Cryptocurrencies in India","An appeal to positively re-evaluate the recent cryptocurrency prohibition bill in India.","Petition email seeking your support for positive regulation of cryptocurrency market in India."]
 
 	state = {
 		indianStates: stateData,
