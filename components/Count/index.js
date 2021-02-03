@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactSelect from 'react-select';
 import styles from './styles.module.scss';
 import fire from '../../config/firebase.js';
 import firebase from 'firebase';
