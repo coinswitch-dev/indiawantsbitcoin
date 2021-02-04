@@ -112,6 +112,7 @@ export default class Share extends Component {
                                 url={this.state.shareUrl}
                                 quote={`${this.state.title} ${this.state.shareUrl}`}
                                 className="mr-4"
+                                id="share-button-facebook"
                                 beforeOnClick={() => this.onShareClick('Facebook')}
                             >
                                 <FacebookIcon size={32} round />
@@ -121,6 +122,7 @@ export default class Share extends Component {
                                 beforeOnClick={() => this.onShareClick('Twitter')}
                                 url={this.state.shareUrl}
                                 title={this.state.title}
+                                id="share-button-twitter"
                                 className="mr-4">
                                 <TwitterIcon size={32} round />
                             </TwitterShareButton>
@@ -129,6 +131,7 @@ export default class Share extends Component {
                                 beforeOnClick={() => this.onShareClick('Whatsapp')}
                                 url={this.state.shareUrl}
                                 title={this.state.title}
+                                id="share-button-whatsapp"
                                 className="mr-4">
                                 <WhatsappIcon size={32} round />
                             </WhatsappShareButton>
@@ -136,6 +139,7 @@ export default class Share extends Component {
                             <TelegramShareButton
                                 beforeOnClick={() => this.onShareClick('Telegram')}
                                 url={this.state.shareUrl}
+                                id="share-button-telegram"
                                 title={`${this.state.title} ${this.state.shareUrl}`}
                                 className="mr-4">
                                 <TelegramIcon size={32} round />
@@ -144,6 +148,7 @@ export default class Share extends Component {
                             <RedditShareButton
                                 beforeOnClick={() => this.onShareClick('Reddit')}
                                 url={this.state.shareUrl}
+                                id="share-button-reddit"
                                 title={`${this.state.title} ${this.state.shareUrl}`}
                             >
                                 <RedditIcon size={32} round />
