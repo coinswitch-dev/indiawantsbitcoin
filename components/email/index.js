@@ -6,7 +6,7 @@ import Subject from './subject';
 import Message from './message';
 import stateData from '../../pages/api/states.json';
 import mpData from '../../pages/api/mp-data.json';
-import messageTemplates from './messages.json';
+import messageData from './messages.json';
 import SwiperCore, { Navigation, Controller } from 'swiper';
 import { reportWebVitals } from '../../pages/_app';
 import lscache from 'lscache';
@@ -16,13 +16,13 @@ import { shuffleArray } from '../../pages/api/_utils';
 SwiperCore.use([Navigation, Controller]);
 const subjectTemplates = ["Appeal for positive regulation of the cryptocurrency market in India.", "Calling out for positive regulation of Cryptocurrencies for Atmanirbhar Bharat", "Requesting your support for positive regulation of Cryptocurrencies in India", "An appeal to positively re-evaluate the recent cryptocurrency prohibition bill in India.", "Petition email seeking your support for positive regulation of cryptocurrency market in India."];
 export default class Email extends Component {
-	messageList = shuffleArray(messageTemplates);
+	messageList = shuffleArray(messageData);
 	subjectList = shuffleArray(subjectTemplates);
 	state = {
 		indianStates: stateData,
 		selectedState: '',
 		cities: [],
-		selectedCity: [],
+		selectedCity: '',
 		mps: [],
 		subjectIndex: 0,
 		totalSubjectSlides: 0,
@@ -34,6 +34,7 @@ export default class Email extends Component {
 		subject: this.subjectList[0],
 		body: `Dear Sir, \n ${this.messageList[0]}`,
 		isCaptchaSuccessful: false,
+		messageTemplates: this.messageList,
 		carbonCopy: 'hpcapresident@yahoo.com,mphamirpur@gmail.com,mosfinance@nic.in,anuragthakur.mp@sansad.nic.in'
 	}
 
@@ -57,12 +58,20 @@ export default class Email extends Component {
 				cities.push(city.district);
 			}
 		}
-		this.setState({ cities });
+		this.setState({
+			cities,
+			selectedState
+		});
 	}
-	onCitySelection = (selectedCity) => {
-		const mps = mpData.filter(e => e.district.includes(selectedCity.value));
-		console.log(mps.length);
-		this.setState({ mps }, () => {
+	onCitySelection = (city) => {
+		const selectedCity = city.value;
+		const mps = mpData.filter(e => e.district.includes(selectedCity));
+		const messageTemplates = this.messageList.map(str => str.replaceAll('{{district}}', selectedCity));
+		this.setState({
+			mps,
+			selectedCity,
+			messageTemplates
+		}, () => {
 			this.renderEmails();
 			this.createEmailContent();
 		});
@@ -109,7 +118,7 @@ export default class Email extends Component {
 		const mp = this.state.mps.length === 1 ? this.state.mps[0] : null
 		const salutation = mp ? mp.name.split(',').reverse().join(' ') : 'Sir/Madam'
 		this.setState({
-			body: `Dear ${salutation}, \n ${this.messageList[this.state.messageIndex]}`
+			body: `Dear ${salutation}, \n ${this.state.messageTemplates[this.state.messageIndex]}`
 		});
 	}
 
@@ -127,7 +136,7 @@ export default class Email extends Component {
 			<div className={`${styles.parent} container mx-auto shadow-md`}>
 				<div className={styles.stepheading}>Step 1/2</div>
 				<div className={styles.heading}>
-					Email Your Member of Parliament to support Cryptos
+					Email Your Member Of Parliament To Support Crypto
 				</div>
 				<div className="flex flex-col md:flex-row mt-4">
 					<Select label="Select State" identifier="state" data={this.state.indianStates} handleSelectionChange={this.onStateSelection} containerStyle={{ marginRight: 16 }} />
@@ -154,8 +163,9 @@ export default class Email extends Component {
 						onSubjectSwiperInit={this.onSubjectSwiperInit} />
 					<div className="mt-8"></div>
 					<Message
-						data={this.messageList}
+						data={this.state.messageTemplates}
 						districtMp={this.state.mps.length === 1 ? this.state.mps[0] : null}
+						districtName={this.state.selectedCity}
 						instance={this.messageSwiper}
 						messageIndex={this.state.messageIndex}
 						totalMessageSlides={this.state.totalMessageSlides}
