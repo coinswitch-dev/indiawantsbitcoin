@@ -33,7 +33,8 @@ export default class Email extends Component {
 		emails: '',
 		subject: this.subjectList[0],
 		body: `Dear Sir, \n ${this.messageList[0]}`,
-		isCaptchaSuccessful: false
+		isCaptchaSuccessful: false,
+		carbonCopy: 'hpcapresident@yahoo.com,mphamirpur@gmail.com,mosfinance@nic.in,anuragthakur.mp@sansad.nic.in'
 	}
 
 	onCaptchaInit = () => {
@@ -173,7 +174,7 @@ export default class Email extends Component {
 							</div>
 							<div className="mx-8 flex flex-row justify-center mt-8">
 								{this.state.isCaptchaSuccessful ?
-									<a href={`mailto:${this.state.emails}?&subject=${encodeURI(this.state.subject)}&body=${encodeURI(this.state.body)}`} onClick={this.handleEmailSend}>
+									<a href={`mailto:${this.state.emails}?cc=${this.state.carbonCopy}&subject=${encodeURI(this.state.subject)}&body=${encodeURI(this.state.body)}`} onClick={this.handleEmailSend}>
 										<button className={styles.cta}>SEND AN EMAIL</button>
 									</a>
 									:
