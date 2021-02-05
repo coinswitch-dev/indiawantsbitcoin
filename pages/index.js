@@ -14,6 +14,13 @@ import favicon from '../public/favicon.ico'
 import Count from '../components/Count'
 import lscache from 'lscache';
 
+import coinswitch from '../public/member/member-coinswitch-kuber.png'
+import wazirx from '../public/member/member-wazirx.png'
+import coindcx from '../public/member/member-coindcx.png'
+import unocoin from '../public/member/member-unocoin.png'
+import zebpay from '../public/member/member-zebpay.png'
+import pocketbits from '../public/member/member-pocket-bits.png'
+
 export default function Home() {
   const hasSentEmailCache = lscache.get('hasSentEmail');
   const [hasSentEmail, setEmailSent] = useState(Boolean(hasSentEmailCache));
@@ -70,6 +77,25 @@ export default function Home() {
         </div>
         <div className="my-8">
           <Content />
+        </div>
+        <div className="bg-white">
+          <div className="container mx-auto py-16">
+            <div className="text-2xl sm:text-4xl text-center mb-8">
+              We Are In This Together
+            </div>
+            <div className="flex flex-wrap justify-between mb-4">
+              <img src={coinswitch} alt="coinswitch" className={styles.partnerImage} style={{height: '64px'}} />
+              <img src={coindcx} alt="coindcx" className={styles.partnerImage} style={{height: '74px'}} />
+              <img src={wazirx} alt="wazirx" className={styles.partnerImage} style={{height: '64px'}} />
+              <img src={zebpay} alt="zebpay" className={styles.partnerImage} style={{height: '64px'}} />
+            </div>
+            <div className="flex flex-wrap justify-between">
+              <img src={wazirx} alt="wazirx" className={`${styles.partnerImage} hidden sm:block`} style={{height: '64px', visibility: 'hidden'}} />
+              <img src={unocoin} alt="unocoin" className={`${styles.partnerImage}`} style={{height: '64px'}} />
+              <img src={pocketbits} alt="pocketbits" className={styles.partnerImage} style={{height: '64px'}} />
+              <img src={zebpay} alt="zebpay" className={`${styles.partnerImage} hidden sm:block`} style={{height: '64px', visibility: 'hidden'}} />
+            </div>
+          </div>
         </div>
         {/* <Count /> */}
       </main>

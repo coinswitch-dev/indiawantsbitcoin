@@ -82,7 +82,7 @@
   align-items: center;
   flex-direction: row;
   height: 50px;
-  background-color: #fff;
+  background-color: darken($color: #f3f5f8, $amount: 5%);
 }
 .termsLabel {
   width: 141px;
@@ -100,4 +100,8 @@
   line-height: 25px;
   display: inline-block;
   margin-left: 20px;
+}
+.partnerImage{
+  object-fit: contain;
+  width: auto;
 }
