@@ -4,26 +4,26 @@ export default function Content() {
     return (
         <div className="container mx-auto p-4">
             <div className={styles.content}>
-              <strong>#IndiaWantsBitcoin Campaign Introduction & Why Participate?</strong>
+              <strong>The Block and Crypto Committee</strong>
               <br /><br />
-              As they say, 'All great changes are preceded by chaos'.
+              <strong>Letter to Community</strong>
               <br /><br />
-              One such chaos, our young but thriving crypto community in India comprising of 10 million+ users, and 300+ crypto start-ups are undergoing because of the impending Crypto ban bill that is on the line to be presented in Loksabha soon.
+              Hodlers,
               <br /><br />
-              The most important part of this crypto ecosystem in India is the users of crypto, i.e. YOU. 
+              As you may be aware, a new bill is being introduced in the Lok Sabha that contemplates a ban on cryptocurrencies in India. While the scope of the ban is unclear, it is going to adversely impact our nascent crypto community.
               <br /><br />
-              We know that you have a burning opinion about this matter, we know you want to do something about this, we know you want to play your part and express your feelings. 
+              In a short while, we have grown into a community of over 10 million holders, 300+ startups generating tens of thousands of jobs and hundreds of millions of dollars in revenue and taxes.
               <br /><br />
-              That's where <strong>#IndiaWantsBitcoin</strong> comes into the picture to help you raise your VOICE and reach out to your Member Of Parliament of your constituencies to call for positive and progressive regulation of crypto markets in India instead of a regressive one to create a new Digital India which is in line with Prime Minister's goal of Self-Reliant India (Atmanirbhar Bharat)
+              Before such ban is passed in haste, it is critical that the most important voice is heard -- and that is yours. Please write to your local member of parliament and to Shri. Anurag Thakur, Minister of State for Finance and let him know that #IndiaWantsBitcoin. Shri. Anurag Thakure is a technologically progressive politician who is in touch with the young Indian aspirations and we are confident he will do the right thing for India.
               <br /><br />
-              So go ahead & send a personal email to your MPs in a couple of clicks to change the future course of cryptocurrencies in India by using this platform which is:
-              <br />
-              Of The Crypto People In India
-              By The Crypto People In India
-              For The Crypto People In India
+              Crypto is creating a democratic financial internet where everyone is an equal participant, and can access financial products that were previously available only to the elite. Over 8M Indians are already saving, earning and investing in this thriving global crypto economy. Banning it would be like banning the internet in the 1990s and will set India back by years.
               <br /><br />
-              Let's Gooooooo!!
-              <br />
+              As innovators, we remain committed to prudent regulation that protects investors and assists law enforcement in prohibiting any illicit use of the crypto infrastructure.
+              <br /><br />
+              Together let's make our HODL heard,
+              <br /><br />
+              #IndiaWantsBitcoin
+              <br /><br />
             </div>
         </div>
     )
