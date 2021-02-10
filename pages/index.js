@@ -67,7 +67,7 @@ export default function Home() {
               Express Your Support For #IndiaWantsBitcoin
             </div>
             <div className={`${styles.hero__subheading} mt-4`}>
-              <strong><i>'If you change nothing, nothing will change':</i></strong> Time to do your bit by supporting this email petition campaign to benefit the crypto community in India.
+              <strong><i>Crypto is driving the next wave of global tech innovation.</i></strong> Help us save the decentralized internet!
             			</div>
           </div>
         </div>
