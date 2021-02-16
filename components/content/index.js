@@ -4,8 +4,6 @@ export default function Content() {
     return (
         <div className="container mx-auto p-4">
             <div className={styles.content}>
-              <strong>The Block and Crypto Committee</strong>
-              <br /><br />
               <strong>Letter to the community from
                     Members of the Blockchain and Crypto Assets Committee of India
               </strong>
