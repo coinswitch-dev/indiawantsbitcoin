@@ -18,6 +18,7 @@
     font-weight: 400;
     font-size: 24px;
     color: $heading;
+    margin-bottom: 2rem;
     @include breakpoint(sm) {
         font-size: 20px;
     }
