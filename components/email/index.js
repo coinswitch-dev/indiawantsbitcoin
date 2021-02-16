@@ -147,7 +147,7 @@ export default class Email extends Component {
 					</div>
 					<div className={styles.rightStepheadingWrapper}>
 						<span>Here's why this is important</span>
-						<iframe src="https://www.youtube.com/embed/qC3S_-29rDw"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						<iframe src="https://www.youtube.com/embed/qC3S_-29rDw"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
 					</div>
 					
 				</div>

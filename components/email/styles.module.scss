@@ -87,11 +87,15 @@
         flex-direction: column;
        span {
            font-weight: bold;
+           padding: 0 2rem;
+           @include breakpoint(sm) {
+            text-align: center;
+        }
        }
         iframe {
             width: 560px;
             height: 315px;
-            padding: 2rem;
+            padding: 0 2rem;
             @include breakpoint(sm) {
                 margin: 0 auto;
                 width: 471px;
@@ -103,3 +107,4 @@
         }
     }
 }
+
