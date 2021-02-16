@@ -57,8 +57,8 @@ export default class Share extends Component {
     render() {
         return (
             <div className={`${styles.parent} container mx-auto shadow-md mt-8`}>
-                <div className={styles.stepheading}>Step 2/2</div>
-                <div className="flex flex-row justify-between">
+                <div className={styles.stepheading}>Well done! Now help us spread the word</div>
+                <div className=" flex-row justify-between">
                     <div className={styles.heading}>
                         Encourage Your Friends To Do The Same
                     </div>
