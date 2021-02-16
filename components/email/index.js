@@ -134,13 +134,22 @@ export default class Email extends Component {
 	render() {
 		return (
 			<div className={`${styles.parent} container mx-auto shadow-md`}>
-				<div className={styles.stepheading}>Step 1/2</div>
-				<div className={styles.heading}>
-					Email Your Member Of Parliament To Support Crypto
-				</div>
-				<div className="flex flex-col md:flex-row mt-4">
-					<Select label="Select State" identifier="state" data={this.state.indianStates} handleSelectionChange={this.onStateSelection} containerStyle={{ marginRight: 16 }} />
-					<Select label="Select District" identifier="state" data={this.state.cities} handleSelectionChange={this.onCitySelection} />
+				<div className={styles.stepheadingWrapper}>
+					<div className={styles.leftStepheadingWrapper}>
+						<div className={styles.stepheading}>Here's what you need to do:</div>
+						<div className={styles.heading}>
+							Email Your Member Of Parliament To Support Crypto
+						</div>
+						<div className="flex flex-col mt-4">
+							<Select className={styles.inputFeild} label="Select State" identifier="state" data={this.state.indianStates} handleSelectionChange={this.onStateSelection} containerStyle={{ marginRight: 16 }} />
+							<Select className={styles.inputFeild} label="Select District" identifier="state" data={this.state.cities} handleSelectionChange={this.onCitySelection} />
+						</div>
+					</div>
+					<div className={styles.rightStepheadingWrapper}>
+						<span>Here's why this is important</span>
+						<iframe src="https://www.youtube.com/embed/qC3S_-29rDw"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+					
 				</div>
 				{Array.isArray(this.state.mps) && this.state.mps.length > 0 && <div className="my-8">
 					<div>
