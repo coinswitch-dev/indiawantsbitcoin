@@ -48,6 +48,17 @@
 .videoWrapper {
   z-index: -1;
   position: absolute;
+  @include breakpoint(sm) {
+  background-image: url('/bitcoinmobile.png');
+  background-size: cover;
+  background-position: center center;
+  height: 640px;
+  width: 100%;
+  background-repeat: no-repeat;
+    video {
+      display: none;
+    }
+  }
 }
 .hero {
   height: 420px;
@@ -181,6 +192,7 @@
     line-height: 3;
     font-size: 2.25rem;
     text-align: center;
+    line-height: 5rem;
     @media only screen and (max-width: 639px) {
       font-size: 1.5rem;
       line-height: 2rem;
@@ -198,15 +210,14 @@
       margin: 1px auto;
   }
   .labelAndSpan:hover {
-    background: #252dad;
-    color: #ffffff;
+    background: #eee;
   }
   .content {
-      background: #E2E5F6;
+      background: #eee;
       padding: 10px 25px;
       border: 1px solid #A7A7A7;
-    margin: 0 0 1px 0;
-    border-radius: 3px;
+      margin: 0 0 1px 0;
+      border-radius: 3px;
   }
 
   input + .content {
@@ -236,6 +247,7 @@
 
 .letterWrapper {
   background: #f3f5f8;
+  padding-top: 3rem;
 }
 .shareContainer {
   background: #f3f5f8;

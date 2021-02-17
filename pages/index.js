@@ -56,7 +56,7 @@ export default function Home() {
       </Head>
       <main className={`${styles.main} full-height`}>
         <div className={styles.videoWrapper} >
-          <video  id='vid' controls  autoPlay='autoplay' loop><source src="VideoBitcoin.mp4" type="video/mp4">
+          <video  id='vid'  autoPlay='autoplay' loop><source src="VideoBitcoin.mp4" type="video/mp4">
               </source>
           </video>
           <script>

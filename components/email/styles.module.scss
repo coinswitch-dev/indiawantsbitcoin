@@ -95,14 +95,17 @@
         iframe {
             width: 560px;
             height: 315px;
-            padding: 0 2rem;
+            // padding: 0 2rem;
             @include breakpoint(sm) {
                 margin: 0 auto;
-                width: 471px;
-                width: 263px;
+                max-width: 335px;
             }
             @include breakpoint(xs) {
-                width: 263px;
+                max-width: 280px !important;
+            }
+            @include breakpoint(md) {
+                // width: 263px;
+                max-width: 600px;
             }
         }
     }
