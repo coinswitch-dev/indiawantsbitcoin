@@ -63,11 +63,12 @@ export default function Home() {
               document.getElementById('vid').play();
           </script>
         </div>
+      
         <div className={styles.hero}>
           <div className={`container mx-auto ${styles.hero__inner}`}>
           <div className={styles.headerWrapper}>
             <div className={styles.leftHeaderWrapper}>
-              <span>#IndiaWantsBitcoin</span>
+              <div className={styles.hastagWrapper}><span>#IndiaWantsBitcoin</span> <img src='/india.svg'></img></div>
               <img src={baton} alt="baton" className={styles.baton} />
             </div>
             <div className={styles.rightHeaderWrapper}>
@@ -76,10 +77,10 @@ export default function Home() {
             </div>
           </div>
             <div className={styles.hero__heading}>
-              Express Your Support For #IndiaWantsBitcoin
+            Support #IndiaWantsBitcoin
             </div>
             <div className={`${styles.hero__subheading} mt-4`}>
-              <strong><i>Crypto is driving the next wave of global tech innovation.</i></strong> Help us save the decentralized internet!
+              <strong><i>Crypto is driving the next wave of global tech innovation.</i></strong> Help us save the financial internet 
             			</div>
           </div>
         </div>
