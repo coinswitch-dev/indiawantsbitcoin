@@ -136,7 +136,7 @@ export default class Email extends Component {
 			<div className={`${styles.parent} container mx-auto shadow-md`}>
 				<div className={styles.stepheadingWrapper}>
 					<div className={styles.leftStepheadingWrapper}>
-						<div className={styles.stepheading}>Here's what you need to do:-</div>
+						<div className={styles.stepheading}>Here's what you need to do:</div>
 						<div className={styles.heading}>
 							Email Your Member Of Parliament To Support Crypto
 						</div>
