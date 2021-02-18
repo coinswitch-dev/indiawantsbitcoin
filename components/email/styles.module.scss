@@ -67,11 +67,47 @@
     background-color: #dadada;
     color: $body;
 }
-.stepheading {
-    font-weight: 400;
-    font-size: 18px;
-    color: $body;
-    @include breakpoint(sm) {
-        font-size: 14px;
+.stepheadingWrapper {
+    display: flex;
+    @include breakpoint(lg) {
+        flex-direction: column;
+    }
+    .leftStepheadingWrapper {
+        .stepheading {
+            font-weight: 400;
+            font-size: 18px;
+            color: $body;
+            @include breakpoint(sm) {
+                font-size: 14px;
+            }
+        }
+    }
+    .rightStepheadingWrapper {
+        display: flex;
+        flex-direction: column;
+       span {
+           font-weight: bold;
+           padding: 0 2rem;
+           @include breakpoint(sm) {
+            text-align: center;
+        }
+       }
+        iframe {
+            width: 560px;
+            height: 315px;
+            // padding: 0 2rem;
+            @include breakpoint(sm) {
+                margin: 0 auto;
+                max-width: 335px;
+            }
+            @include breakpoint(xs) {
+                max-width: 280px !important;
+            }
+            @include breakpoint(md) {
+                // width: 263px;
+                max-width: 600px;
+            }
+        }
     }
 }
+
