@@ -8,6 +8,7 @@ import Success from '../components/success'
 import Share from '../components/share'
 import Content from '../components/content'
 import baton from '../public/baton-light.png'
+import backgroundIndia from '../public/india.svg'
 import indiawantsbitcoin from '../public/indiawantsbitcoin-banner.png'
 import headerBanner from '../public/header-banner.png'
 import favicon from '../public/favicon.ico'
@@ -52,23 +53,23 @@ export default function Home() {
         <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-V04Q1FJHPM"></script>
         <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-        
+
       </Head>
       <main className={`${styles.main} full-height`}>
         <div className={styles.videoWrapper} >
-          <video  id='vid'  autoPlay='autoplay' loop><source src="VideoBitcoin.mp4" type="video/mp4">
+          <video  id='vid'  autoPlay='autoplay' loop><source src="/VideoBitcoin.mp4" type="video/mp4">
               </source>
           </video>
           <script>
               document.getElementById('vid').play();
           </script>
         </div>
-      
+
         <div className={styles.hero}>
           <div className={`container mx-auto ${styles.hero__inner}`}>
           <div className={styles.headerWrapper}>
             <div className={styles.leftHeaderWrapper}>
-              <div className={styles.hastagWrapper}><span>#IndiaWantsBitcoin</span> <img src='/india.svg'></img></div>
+              <div className={styles.hastagWrapper}><span>#IndiaWantsBitcoin</span> <img src={backgroundIndia}></img></div>
               <img src={baton} alt="baton" className={styles.baton} />
             </div>
             <div className={styles.rightHeaderWrapper}>
@@ -80,7 +81,7 @@ export default function Home() {
             Support #IndiaWantsBitcoin
             </div>
             <div className={`${styles.hero__subheading} mt-4`}>
-              <strong><i>Crypto is driving the next wave of global tech innovation.</i></strong> Help us save the financial internet 
+              <strong><i>Crypto is driving the next wave of global tech innovation.</i></strong> Help us save the financial internet
             			</div>
           </div>
         </div>
@@ -89,7 +90,7 @@ export default function Home() {
           <div className={styles.shareContainer}>
           <Share /> </div>
         </div>
-        
+
         <div id='letter' className="my-8" className={styles.letterWrapper}>
           <Content />
         </div>
@@ -249,7 +250,7 @@ export default function Home() {
 
               <div className={styles.content}>
                 <p>
-                Bitcoin specifically and cryptocurrencies more generally were built to resist bans. For the government to truly stop Indians from making Bitcoin transactions a mere internet shutdown for a day or week or even a year would not be enough. The state would need to (a) subject the country to an <a style={{color:'blue'}} href='https://en.wikipedia.org/wiki/Electromagnetic_pulse'>electromagnetic pulse</a> or <a style={{color:'blue'}} href='https://en.wikipedia.org/wiki/Degaussing#Magnetic_data_storage_media '>mass degaussing</a> sufficient to destroy all forms of memory storage, (b) ban all immigration and emigration indefinitely, and (c) stop all forms of communication entirely with people outside the country (including physical mail) to prevent anyone from sending a few words out of India.<br/><br/> 
+                Bitcoin specifically and cryptocurrencies more generally were built to resist bans. For the government to truly stop Indians from making Bitcoin transactions a mere internet shutdown for a day or week or even a year would not be enough. The state would need to (a) subject the country to an <a style={{color:'blue'}} href='https://en.wikipedia.org/wiki/Electromagnetic_pulse'>electromagnetic pulse</a> or <a style={{color:'blue'}} href='https://en.wikipedia.org/wiki/Degaussing#Magnetic_data_storage_media '>mass degaussing</a> sufficient to destroy all forms of memory storage, (b) ban all immigration and emigration indefinitely, and (c) stop all forms of communication entirely with people outside the country (including physical mail) to prevent anyone from sending a few words out of India.<br/><br/>
                 Clearly this is infeasible, which is why a Bitcoin ban is technically infeasible.<br/><br/>
                 </p>
               </div>
