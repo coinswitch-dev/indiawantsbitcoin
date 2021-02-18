@@ -136,7 +136,7 @@ export default class Email extends Component {
 			<div className={`${styles.parent} container mx-auto shadow-md`}>
 				<div className={styles.stepheadingWrapper}>
 					<div className={styles.leftStepheadingWrapper}>
-						<div className={styles.stepheading}>Here's what you need to do:</div>
+						<div className={styles.stepheading}>Here's what you need to do:-</div>
 						<div className={styles.heading}>
 							Email Your Member Of Parliament To Support Crypto
 						</div>
@@ -149,7 +149,7 @@ export default class Email extends Component {
 						<span>Here's why this is important</span>
 						<iframe src="https://www.youtube.com/embed/p3ogKnPffVY"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
 					</div>
-					
+
 				</div>
 				{Array.isArray(this.state.mps) && this.state.mps.length > 0 && <div className="my-8">
 					<div>
