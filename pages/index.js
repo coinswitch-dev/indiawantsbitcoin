@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Head from 'next/head'
 import styles from '../styles/Home.module.scss'
 import Container from '../components/container'
@@ -57,8 +57,14 @@ export default function Home() {
       </Head>
       <main className={`${styles.main} full-height`}>
         <div className={styles.videoWrapper} >
-          <video  id='vid'  autoPlay='autoplay' loop><source src="/VideoBitcoin.mp4" type="video/mp4">
-              </source>
+          <video
+            id='vid'
+            autoPlay
+            muted
+            loop
+            className={styles.videoBackground}
+          >
+            <source src={"/VideoBitcoin.mp4"} type="video/mp4"></source>
           </video>
           <script>
               document.getElementById('vid').play();

@@ -48,6 +48,7 @@
 .videoWrapper {
   z-index: -1;
   position: absolute;
+  background: #000;
   @include breakpoint(sm) {
   background-image: url('/bitcoinmobile.png');
   background-size: cover;
@@ -59,6 +60,9 @@
       display: none;
     }
   }
+}
+.videoBackground {
+  background-color: #000;
 }
 .hero {
   height: 420px;
