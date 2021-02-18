@@ -63,6 +63,8 @@
     font-weight: 400;
     font-size: 18px;
     color: $body;
+    display: flex;
+    flex-direction: column;
     @include breakpoint(sm) {
         font-size: 14px;
     }
