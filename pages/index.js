@@ -101,7 +101,10 @@ export default function Home() {
           <Content />
         </div>
         <div className={styles.tweetWrapper} >
-          <a href="https://twitter.com/intent/tweet?button_hashtag=IndiaWantsBitcoin&ref_src=twsrc%5Etfw" class="twitter-hashtag-button" data-size="large" data-text="TODAY, I decided to help stop crypto from getting banned in India, so just emailed my constituency’s Member of Parliament (MP) expressing my view and ideas on the proposed Crypto ban Bill. | Follow the #IndiaWantsBitcoin movement at www.indiawantsbitcoin.org " data-show-count="false">Tweet #IndiaWantsBitcoin</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          <a href="https://twitter.com/intent/tweet?button_hashtag=IndiaWantsBitcoin&ref_src=twsrc%5Etfw" class="twitter-hashtag-button" data-size="large" data-text="I just emailed my local MP to support progressive crypto regulations for India.\n
+          Regulate, don’t ban #bitcoin.\n
+          Make your voice heard!👇@ianuragthakur\n
+          #IndiaWantsBitcoin www.indiawantsbitcoin.org " data-show-count="false">Tweet #IndiaWantsBitcoin</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
         <div className="bg-white">
           <div className="container mx-auto py-16">

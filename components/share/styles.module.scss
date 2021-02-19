@@ -91,10 +91,28 @@
     @include breakpoint(sm) {
         width: 100%;
     }
+    .borderBetweenShare {
+        margin: 0 1rem;
+        border: 1px solid;
+        height: 33px;
+        @include breakpoint(sm) {
+            display: none;
+        }
+    }
     &__inner {
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: center;
+        @include breakpoint(sm) {
+            flex-direction: column;
+        }
+    }
+    .shaeOptionsWrapper {
+        display: flex;
+        align-items: center;
+        @include breakpoint(sm) {
+            margin-top: 1rem;
+        }
     }
 }
