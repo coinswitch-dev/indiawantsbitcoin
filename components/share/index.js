@@ -18,8 +18,8 @@ import { reportWebVitals } from '../../pages/_app';
 
 const templates = [
     `I just emailed my constituency’s Member of Parliament (MP) on my views towards the impending Bill’s ban on cryptocurrencies in India. #IndiaWantsBitcoin \nYou too can email your MP telling them how the bill’s passing could leave India behind from here: `,
-    `TODAY, I decided to help stop crypto from getting banned in India, so just emailed my constituency’s Member of Parliament (MP) expressing my view and ideas on the proposed Crypto ban Bill. #IndiaWantsBitcoin \nYou can also do so in #3 steps from here: `,
-    `I urge you to do your part by emailing the parliament member (MP) of your constituency on GOI’s proposed Crypto Ban. Who will express our concerns and idea about positive crypto regulations, if not us? #IndiaWantsBitcoin \nI did it from here with ease: `
+    // `TODAY, I decided to help stop crypto from getting banned in India, so just emailed my constituency’s Member of Parliament (MP) expressing my view and ideas on the proposed Crypto ban Bill. #IndiaWantsBitcoin \nYou can also do so in #3 steps from here: `,
+    // `I’m concerned about the proposed crypto ban in India.Crypto is the new financial internet. India must adopt it or we will get left behind. Please email your local MP today! #IndiaWantsBitcoin\nhttps://indiawantsbitcoin.org `
 ];
 const randomTemplates = shuffleTemplates(templates);
 export default class Share extends Component {
@@ -57,12 +57,12 @@ export default class Share extends Component {
     render() {
         return (
             <div className={`${styles.parent} container mx-auto shadow-md mt-8`}>
-                <div className={styles.stepheading}><span>Well done!</span> <span>Help us spread the word</span></div>
+                <div className={styles.stepheading}>Well done!</div>
                 <div className=" flex-row justify-between">
                     <div className={styles.heading}>
-                        Encourage Your Friends To Do The Same
+                        Help us spread the word
                     </div>
-                    <div className="hidden sm:flex flex-row">
+                    {/* <div className="hidden sm:flex flex-row">
                         <div className={`${styles.heading2} mr-4`}>
                             Choose a message template {this.state.slideIndex + 1}/{this.state.totalSlides}
                         </div>
@@ -72,7 +72,7 @@ export default class Share extends Component {
                         <svg className={`h-6 w-6 ${this.state.slideIndex === this.state.totalSlides - 1 ? 'text-gray-300' : 'text-indigo-500'} share-next`} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                         </svg>
-                    </div>
+                    </div> */}
                 </div>
                 <Swiper
                     slidesPerView={1}
@@ -91,68 +91,77 @@ export default class Share extends Component {
                         </SwiperSlide>
                     ))}
                 </Swiper>
-                <div className="sm:hidden flex flex-row justify-center" style={{ marginTop: '-8px' }}>
+                {/* <div className="sm:hidden flex flex-row justify-center" style={{ marginTop: '-8px' }}>
                     <svg className={`h-6 w-6 mr-8 ${this.state.slideIndex === 0 ? 'text-gray-300' : 'text-indigo-500'} share-prev`} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                     </svg>
                     <svg className={`h-6 w-6 ${this.state.slideIndex === this.state.totalSlides - 1 ? 'text-gray-300' : 'text-indigo-500'} share-next`} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
-                </div>
+                </div> */}
                 <div className="mt-8 flex flex-row justify-center">
                     <div className={styles.shareContainer}>
                         <div className={`${styles.shareText} sm:hidden block text-center mb-4`} style={{ marginRight: 0 }}>
-                            Share On
+                            Share Now
                         </div>
                         <div className={styles.shareContainer__inner}>
                             <div className={`${styles.shareText} hidden sm:block`}>
-                                Share On
+                                Share Now
                             </div>
-                            <FacebookShareButton
-                                url={this.state.shareUrl}
-                                quote={`${this.state.title} ${this.state.shareUrl}`}
-                                className="mr-4"
-                                id="share-button-facebook"
-                                beforeOnClick={() => this.onShareClick('Facebook')}
-                            >
-                                <FacebookIcon size={32} round />
-                            </FacebookShareButton>
+                            <div className={styles.tweetWrapper} >
+                                <a href="https://twitter.com/intent/tweet?button_hashtag=IndiaWantsBitcoin&ref_src=twsrc%5Etfw" class="twitter-hashtag-button" data-size="large" data-text="I just emailed my local MP to support progressive crypto regulations for India.\n
+                                Regulate, don’t ban #bitcoin.\n
+                                Make your voice heard!👇\n
+                                #IndiaWantsBitcoin www.indiawantsbitcoin.org " data-show-count="false">Tweet #IndiaWantsBitcoin</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                            </div>
+                            <div className={styles.borderBetweenShare}></div>
+                            <div className={styles.shaeOptionsWrapper}>
+                                <FacebookShareButton
+                                    url={this.state.shareUrl}
+                                    quote={`${this.state.title} ${this.state.shareUrl}`}
+                                    className="mr-4"
+                                    id="share-button-facebook"
+                                    beforeOnClick={() => this.onShareClick('Facebook')}
+                                >
+                                    <FacebookIcon size={32} round />
+                                </FacebookShareButton>
 
-                            <TwitterShareButton
-                                beforeOnClick={() => this.onShareClick('Twitter')}
-                                url={this.state.shareUrl}
-                                title={this.state.title}
-                                id="share-button-twitter"
-                                className="mr-4">
-                                <TwitterIcon size={32} round />
-                            </TwitterShareButton>
+                                <TwitterShareButton
+                                    beforeOnClick={() => this.onShareClick('Twitter')}
+                                    url={this.state.shareUrl}
+                                    title={this.state.title}
+                                    id="share-button-twitter"
+                                    className="mr-4">
+                                    <TwitterIcon size={32} round />
+                                </TwitterShareButton>
 
-                            <WhatsappShareButton
-                                beforeOnClick={() => this.onShareClick('Whatsapp')}
-                                url={this.state.shareUrl}
-                                title={this.state.title}
-                                id="share-button-whatsapp"
-                                className="mr-4">
-                                <WhatsappIcon size={32} round />
-                            </WhatsappShareButton>
+                                <WhatsappShareButton
+                                    beforeOnClick={() => this.onShareClick('Whatsapp')}
+                                    url={this.state.shareUrl}
+                                    title={this.state.title}
+                                    id="share-button-whatsapp"
+                                    className="mr-4">
+                                    <WhatsappIcon size={32} round />
+                                </WhatsappShareButton>
 
-                            <TelegramShareButton
-                                beforeOnClick={() => this.onShareClick('Telegram')}
-                                url={this.state.shareUrl}
-                                id="share-button-telegram"
-                                title={`${this.state.title} ${this.state.shareUrl}`}
-                                className="mr-4">
-                                <TelegramIcon size={32} round />
-                            </TelegramShareButton>
+                                <TelegramShareButton
+                                    beforeOnClick={() => this.onShareClick('Telegram')}
+                                    url={this.state.shareUrl}
+                                    id="share-button-telegram"
+                                    title={`${this.state.title} ${this.state.shareUrl}`}
+                                    className="mr-4">
+                                    <TelegramIcon size={32} round />
+                                </TelegramShareButton>
 
-                            <RedditShareButton
-                                beforeOnClick={() => this.onShareClick('Reddit')}
-                                url={this.state.shareUrl}
-                                id="share-button-reddit"
-                                title={`${this.state.title} ${this.state.shareUrl}`}
-                            >
-                                <RedditIcon size={32} round />
-                            </RedditShareButton>
+                                <RedditShareButton
+                                    beforeOnClick={() => this.onShareClick('Reddit')}
+                                    url={this.state.shareUrl}
+                                    id="share-button-reddit"
+                                    title={`${this.state.title} ${this.state.shareUrl}`}
+                                >
+                                    <RedditIcon size={32} round />
+                                </RedditShareButton>
+                            </div>
                         </div>
                     </div>
                 </div>
